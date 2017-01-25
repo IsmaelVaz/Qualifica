@@ -1,1 +1,148 @@
 @charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, sans-serif;
+}
+
+p{
+    font-size: 12pt;
+}
+
+/* Div responsavel por ter todo o conteudo do site */
+div#interface{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #a9a9aa;
+
+}
+
+/* Edição do cabeçalho padrão do site */
+header#cabecalho-principal{
+    width: 900px;
+    height: 190px;
+    background-color: #ff0000;
+}
+
+header#cabecalho-principal div#lugar-img{
+    width: 150px;
+    height: 150px;
+    border: solid 1px #000;
+    float: left;
+    display: block;
+    margin: 20px;
+}
+
+header#cabecalho-principal h1{
+    display: block;
+    position: relative;
+    top: 120px;
+    left: 10px;
+    font-size: 25pt;
+}
+
+/* Edição dos botões de se inscrever, localidado no começo e no fim do site */
+div#botao-direita, div#botao-centro{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+div#botao-direita{
+    text-align: right;
+    margin-right: 100px;
+}
+
+div#botao-centro{
+    text-align: center;
+}
+
+button.botao-inscrever{
+    padding: 10px 20px 10px 20px;
+    font-size: 13pt;
+}
+
+/* Edição do campo onde ficará o texto principal do site*/
+article#sobre-projeto{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ff0000;
+    margin-bottom: 10px;
+}
+
+article#sobre-projeto h1{
+   text-align: center;
+   padding-top: 10px;
+   font-size: 16pt;
+}
+
+article#sobre-projeto p{
+    padding: 20px;
+}
+
+/* Lugar onde ficará todos os cursos e suas informações */
+section#cursos{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ff0000;
+}
+
+/* Edição dos cursos*/
+section#cursos nav {
+    width: 300px;  
+    height: 300px;
+    border: solid 1px #000;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+section#cursos ul{
+    list-style: none;
+}
+
+section#cursos li{
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: solid 1px #000;
+}
+
+section#cursos spam.conteudo-curso{
+    display: none;
+}
+
+/* Edição das informações do curso*/
+section#cursos p#detalhe-curso{
+    background-color: #fff;
+    float: right;
+    width: 360px;
+    display: block;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* Edição do botão para ver o restante dos cursos */
+section#cursos div#config-botao{
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+section#cursos button#botao-ver-mais{
+    padding: 5px 20px 5px 20px;
+    font-size: 10pt;
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+    height: 30px;
+    padding-top: 10px;
+}
