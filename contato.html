@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Projeto Qualifica</title>
+        <link rel="stylesheet" href="_css/estilo.css"/>
+        <script src="_js/jquery.js"></script>
+        <script src="_js/inicial.js"></script>
+        <script src="_js/jquery-scrollfixed.js"></script>
+    </head>
+    <body>
+        <div id="interface">
+            <header id="cabecalho-principal"></header>
+            <section id="corpo">
+                <form action="email.php" method="post" name="formulario" enctype="multipart/form-data">
+                    <fieldset id="usuario">
+                        <legend> Dados do aluno</legend>
+                        <p><label for="tNome">Nome: </label><input required size="40" type="text" name="cNome" id="tNome" placeholder="Nome Completo"/></p>
+                        <p><label for="tTelefone">Telefone: </label><input required size="20" type="text" name="cTelefone" id="tTelefone" placeholder="Ex.: (xx) 1234-4322"/></p>
+                        <p><label for="tCelular">Celular: </label><input size="20" type="text" name="cCelular" id="tCelular" placeholder="Ex.: (xx) 9 1234-4322"/></p>
+                        <p><label for="tEmail">E-mail: </label><input size="40" type="text" name="cEmail" id="tEmail" placeholder="E-mail para contato"/></p>
+                    </fieldset>
+                    <fieldset id="responsavel">
+                        <legend> Dados do responsável</legend>
+                        <p><label for="tNomeResp">Nome do responsável: </label><input required size="30" type="text" name="cNomeResp" id="tNomeResp" placeholder="Nome Completo"/></p>
+                        <p><label for="tTelefoneResp">Telefone do responsável: </label><input required size="20" type="text" name="cTelefoneResp" id="tTelefoneResp" placeholder="Ex.: (xx) 1234-4322"/></p>
+                        <p><label for="tCelularResp">Celular do responsável: </label><input size="20" type="text" name="cCelularResp" id="tCelularResp" placeholder="Ex.: (xx) 9 1234-4322"/></p>
+                    </fieldset>
+                    <fieldset id="questionario">
+                        <legend> Questionário</legend>
+                            <table>
+                                <tr>
+                                    <td colspan="2">
+                                         <p>Já fez algum curso de qualificação?</p>
+                                    </td> 
+                                </tr>
+                                <tr>
+                                    <td width="50%">
+                                        <label for="tQualiSim">Sim</label>
+                                        <input type="radio" value="sim" required name="cRadioQuali" id="tQualiSim" />
+                                    </td>
+                                    <td width="50%">
+                                        <label for="tQualiNao">Não</label>
+                                        <input type="radio" value="nao" required name="cRadioQuali" id="tQualiNao" checked />
+                                    </td>
+                                </tr>
+                                <tr class="linhaSumir">
+                                    <td colspan="2">
+                                        <p><label for="tInst">Nome da instituição </label><input size="30" type="text" name="cInst" id="tInst" /></p>
+                                    </td>
+                                </tr>
+                                <tr class="linhaSumir">
+                                    <td colspan="2">
+                                        <p><label for="tInvestiu">Quanto investiu: </label><input size="30" type="text" name="cInvestiu" id="tInvestiu" /></p>
+                                    </td>
+                                </tr>
+                                <tr class="linhaSumir">
+                                    <td colspan="2">
+                                        <p>Já concluiu o curso?</p>
+                                    </td> 
+                                </tr>
+                                <tr class="linhaSumir">
+                                    <td>
+                                        <label for="tCursoSim">Sim</label>
+                                        <input type="radio" value="sim" name="cRadioCurso" id="tCursoSim" />
+                                    </td>
+                                    <td>
+                                        <label for="tCursoNao">Não</label>
+                                        <input type="radio" value="nao" name="cRadioCurso" id="tCursoNao" checked/>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        
+                        <p>
+                            <label for="tEscolaNormal">Nome da escola (Ensino Médio - Ensino Fundamental) </label><br>
+                            <input size="50" type="text" name="cEscolaNormal" id="tEscolaNormal"/>
+                        </p>
+                        <p>
+                            <label for="tCurriculo">Curriculo (PDF ou Word)</label><br>
+                            <input type="file" required accept=".doc,.pdf,.docx" name="cCurriculo" id="tCurriculo" />
+                        </p>
+                    </fieldset>
+                    <div id="botao-centro">
+                        <button class="botao-inscrever" type="submit" name="cEnviar">Enviar</button>
+                    </div>
+                </form>                
+            </section>
+            <footer>
+                <p>
+                    Copyright &copy; Qualifica
+                    <br/>
+                    Developed by <a href="http://www.msolucaoti.com.br" target="_blank">MSOLUÇÃOTI</a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

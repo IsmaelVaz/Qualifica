@@ -4,40 +4,59 @@ function verMais(){
     
 }
 
+
 /* Função para diminuir ou aumentar a div dos cursos */
 $(function () {
     $('#botao-ver-mais').click(function () {
         var divCursos = document.getElementById("todos-cursos");
-
+        var divDetalheCurso = $("#detalhe-curso");
         if($(this).text() == 'Ver Menos'){
             divCursos.style.height = "300px";
-            $(this).text("Ver Mais");
-        }else{
-            
+            divCursos.style.boxShadow ="inset 0 -10px 10px -10px #000000";
+            $(this).text("Ver Todos");
+        }else{       
             divCursos.style.height = "auto";
+            divCursos.style.boxShadow ="none";
+            var imgDedo = $("#dedo-indicando");
+
+            /* Mantem a div fixa somente se o botão ver mais for clicado */
+            divDetalheCurso.scrollToFixed();
+            imgDedo.scrollToFixed();
             $(this).text("Ver Menos");
         }
         
-        /*var valorSpam= $("spam", this).text();
-        var paragrafo = $("#detalhe-curso").text(valorSpam);
-        $(this).css('text-decoration', 'underline');*/
     });
 });
 
-/* Função para colocar o detalhe do curso na tag p */
+$(function(){
+    $('#tQualiSim').click(function(){
+        var linhaSumir = $('.linhaSumir');
+        
+        linhaSumir.css('display', 'table-row');
+    });
+
+    $('#tQualiNao').click(function(){
+        var linhaSumir = $('.linhaSumir');
+        linhaSumir.css('display', 'none');
+    });
+});
+
+/* Função para colocar o detalhe do curso na tag p ao passar o mouse*/
 $(function () {
-    $('.lista-item').mouseenter(function () {
-        var valorSpam= $("spam", this).val();
-        var paragrafo = $("#detalhe-curso").val(valorSpam);
-        $(this).css('text-decoration', 'underline');
+    $('.lista-item').hover(function () {
+        var valorSpam= $("spam", this).html();
+        var paragrafo = $("#detalhe-curso").html(valorSpam);
+        var imgDedo = $("#dedo-indicando");
+        imgDedo.css("display", "none");
+        paragrafo.css("background-color", "#7FFFD4");
+        $(this).css('border-bottom', 'solid 1px #000');
+
     });
 });
 
-/* Função para tirar o detalhe do curso na tag p */
+/* Função para tirar o detalhe do curso na tag p ao tirar o mouse*/
 $(function () {
     $('.lista-item').mouseout(function () {
-        var valorSpam= $("spam", this).text();
-        var paragrafo = $("#detalhe-curso").text(valorSpam);
-        $(this).css('text-decoration', 'none');
+        $(this).css('border-bottom', 'none');
     });
 });
