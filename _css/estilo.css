@@ -26,6 +26,31 @@ button{
     cursor: pointer;
 }
 
+#mascara{
+    width: 100%; height: 100%;
+    background-color: #000;
+    display: none;
+}
+
+#pop{
+    width:500px; height:500px;
+    background-color: #fff;
+    margin-left:180px; margin-right: auto; margin-top:-250px;
+    display: none;
+    top:50%;
+    padding:10px;
+    border:1px solid #d0d0d0; border-radius: 5px;
+    position:fixed;
+    -webkit-box-shadow: 0px 0px 10px 0px #a9a9a9;
+    -moz-box-shadow:  0px 0px 10px 0px #a9a9a9;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+#pop a{
+    text-decoration: none;
+    color: #4A7B3A;
+}
+
 /* Div responsavel por ter todo o conteudo do site */
 div#interface{
     width: 900px;
@@ -64,6 +89,39 @@ header#cabecalho-principal h1{
     top: 120px;
     left: 10px;
     font-size: 25pt;
+}
+
+/*Edição do menu padrão de navegação*/
+nav#menu-navegacao{
+    width: 100%;
+    height: 50px;
+    background-color: #ff9000;
+    padding-top: 6px;
+}
+
+nav#menu-navegacao ul{
+    list-style: none;
+    margin-left: 10px;
+}
+
+nav#menu-navegacao li{
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    margin-right: -7px;
+    font-weight: bold;
+}
+
+nav#menu-navegacao li:hover{
+    background-color: seagreen;
+    
+}
+
+nav#menu-navegacao a{
+    text-decoration: none;
+    color: #000;
+    
 }
 
 /* Edição dos botões de se inscrever, localidado no começo e no fim do site */
@@ -181,7 +239,6 @@ section#cursos p.titulo-curso{
     font-weight: bold;
 }
 
-
 /* Edição das informações do curso*/
 section#cursos p#detalhe-curso{
     background-color: #fff;
@@ -194,6 +251,27 @@ section#cursos p#detalhe-curso{
     text-align: justify;
     border-radius: 5px;
     
+}
+
+/*Edição da página galeria*/
+fieldset.field-video{
+    margin: 30px 20px 0px 20px;
+
+}
+
+fieldset.field-video div.video {
+    border: solid 1px #000;
+    width: 600px;
+    height: 350px;
+    margin: 0px auto 10px auto;
+
+}
+
+fieldset.field-video p {
+    width: 600px;
+    text-align: justify;
+    margin: 0px auto 10px auto;
+
 }
 
 /*Edição do formulario da pagina contato*/
@@ -222,7 +300,6 @@ form label{
 }
 
 form input{    
-    
     padding-left: 5px;
     height: 25px;
     margin-bottom: 10px;

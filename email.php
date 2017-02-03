@@ -1,5 +1,8 @@
 <?php 
+require_once("gerenciador/conection.php");
+
 if(isset($_POST['cEnviar'])){
+    $numInsc = rand(1000, 50000000);
     $nome = $_POST['cNome'];
     $telefone = $_POST['cTelefone'];
     $celular = $_POST['cCelular'];
@@ -17,6 +20,7 @@ if(isset($_POST['cEnviar'])){
     
     $mensagem = "
         <fieldset>
+            <p><b>Código de inscrição: </b>$numInsc</p>
             <legend>Dados do Aluno</legend>
             <p><b>Nome completo: </b>$nome</p>
             <p><b>Telefone: </b>$telefone</p>
@@ -39,8 +43,20 @@ if(isset($_POST['cEnviar'])){
             <p><b>Curriculo: </b>Em Anexo</p>
         </fieldset>
     ";
+    $con = Conectar();
 
-    echo($mensagem);
+        
+    $sql = "insert into inscricao (num_inscricao, nome, telefone, celular, email, nome_resp, telefone_resp, celular_resp, ";
+    $sql .="fez_curso, nome_inst, qt_investiu, ja_concluiu, nome_escola, dt_criacao) values "; 
+    $sql .="($numInsc, '$nome', '$telefone', '$celular', '$email', '$nomeResp', '$telefoneResp', '$celularResp', ";
+    $sql .="'$fezCurso', '$nomeInst', '$investiu', '$concluiu', '$nomeEscola', now());";
+
+    echo($sql);
+    mysqli_query($con, $sql);
+
+    mysqli_close($con);
+
+    /*echo($mensagem);
 
     $arquivoAnexo=$_FILE["cCurriculo"];
 
@@ -79,6 +95,6 @@ if(isset($_POST['cEnviar'])){
     unset($msg_temp, $tmp, $enc);
 
     mail("qualificamenoraprendiz@hotmail.com", "Inscricao Qualifica", $msg, $headers);
-    header("location:index.html");
+    header("location:index.html");*/
 }
 ?>

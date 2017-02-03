@@ -7,10 +7,51 @@
         <script src="_js/jquery.js"></script>
         <script src="_js/inicial.js"></script>
         <script src="_js/jquery-scrollfixed.js"></script>
+
+        <script> 
+            $(function AbrirPopUp(){
+                $('#pop').css('display', 'block');
+                $('#mascara').css('display', 'block');
+            });
+
+            function FecharPopUp(){
+                document.getElementById('pop').style.display = 'none';
+                document.getElementById('mascara').style.display = 'none';
+            }
+            /*Pega o evento de Load da pagina*/
+            (function() {
+
+                /*Pega a url atual*/
+                var urlAtual = window.location.href;
+
+                /*Seta a url para chamar a função*/
+                var urlParaRedirecionar = 'http://localhost/Qualifica/index.html?q';
+
+                /*verifica se é para execultar a função, se sim, ele a execulta*/
+                if(urlAtual == urlParaRedirecionar) {
+                    AbrirPopUp();
+                }
+
+            })();
+        </script>
     </head>
     <body>
+        <div id="mascara"></div>
+            <div id="pop">
+                <a href="#" onclick="FecharPopUp();">[Fechar]</a><br/>
+                <div id="map-canvas"></div>
+               asdasdasda
+            </div>
         <div id="interface">
+            
             <header id="cabecalho-principal"></header>
+            <nav id="menu-navegacao">
+                <ul>
+                    <li><a href="index.html">ínicio</a></li>
+                    <li><a href="galeria.html">galeria</a></li>
+                    <li><a href="contato.html">pré-inscrição</a></li>
+                </ul>
+            </nav>
             <section id="corpo">
                 <div id="botao-direita">
                     <button class="botao-inscrever" onclick="window.location.href='contato.html';">Pré-inscrição</button>
