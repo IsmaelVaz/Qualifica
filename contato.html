@@ -7,6 +7,23 @@
         <script src="_js/jquery.js"></script>
         <script src="_js/inicial.js"></script>
         <script src="_js/jquery-scrollfixed.js"></script>
+        <script type="text/javascript">
+        	/* Máscaras ER */
+            function mascara(o,f){
+                v_obj=o
+                v_fun=f
+                setTimeout("execmascara()",1)
+            }
+            function execmascara(){
+                v_obj.value=v_fun(v_obj.value)
+            }
+            function mtel(v){
+                v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
+                v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+                v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+                return v;
+            }
+        </script>
     </head>
     <body>
         <div id="interface">
@@ -23,9 +40,9 @@
                     <fieldset id="usuario">
                         <legend> Dados do aluno</legend>
                         <p><label for="tNome">Nome: </label><input required size="40" type="text" name="cNome" id="tNome" placeholder="Nome Completo"/></p>
-                        <p><label for="tTelefone">Telefone: </label><input required size="20" type="text" name="cTelefone" id="tTelefone" placeholder="Ex.: (xx) 1234-4322"/></p>
-                        <p><label for="tCelular">Celular: </label><input size="20" type="text" name="cCelular" id="tCelular" placeholder="Ex.: (xx) 9 1234-4322"/></p>
-                        <p><label for="tEmail">E-mail: </label><input size="40" type="text" name="cEmail" id="tEmail" placeholder="E-mail para contato"/></p>
+                        <p><label for="tTelefone">Telefone: </label><input required size="20" type="text" name="cTelefone" id="tTelefone" onkeyup="mascara( this, mtel );" maxlength="14" placeholder="Ex.: (xx) 1234-4322"/></p>
+                        <p><label for="tCelular">Celular: </label><input size="20" type="text" name="cCelular" onkeyup="mascara( this, mtel );" maxlength="15" id="tCelular" placeholder="Ex.: (xx) 9 1234-4322"/></p>
+                        <p><label for="tEmail">E-mail: </label><input size="40" type="email" name="cEmail" id="tEmail" placeholder="E-mail para contato"/></p>
                     </fieldset>
                     <fieldset id="responsavel">
                         <legend> Dados do responsável</legend>

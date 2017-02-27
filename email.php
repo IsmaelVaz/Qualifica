@@ -95,6 +95,6 @@ if(isset($_POST['cEnviar'])){
     unset($msg_temp, $tmp, $enc);
 
     mail("qualificamenoraprendiz@hotmail.com", "Inscricao Qualifica", $msg, $headers);
-    header("location:index.html");*/
+    header("location:index.html?finalizado");*/
 }
 ?>
